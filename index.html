@@ -1,0 +1,54 @@
+<table>
+    <tr class="uno">
+        <td id="agua" class="pescado">Agua</td>
+        <td id="perro" class="hueso humano">Perro</td>
+        <td id="gato" class="raton pescado">Gato</td>
+    </tr>
+    <tr class="dos">
+        <td id="gallina" class="maiz humano">Gallina</td>
+        <td id="raton" class="maiz gato">Raton</td>
+        <td id="humano" class="perro gato gallina">Humano</td>
+    </tr>
+    <tr class="tres">
+        <td id="maiz" class="gallina raton">Maiz</td>
+        <td id="hueso" class="perro raton">Hueso</td>
+        <td id="pescado" class="agua humano gato">Pescado</td>
+    </tr>
+</table>
+
+
+
+<style>
+    .uno .active{
+        background-color: green;
+    }
+    .dos .active{
+        background-color: red;
+    }
+    .tres .active{
+        background-color: orangered;
+    }
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+
+let idElemento = '';
+$('td').on('mouseenter',function() {
+    idElemento = $(this).attr('id');
+    $("."+idElemento+"").addClass('active');
+    $(this).addClass('active')
+  
+});
+
+$('td').mouseleave(function(){
+    idElemento = $(this).attr('id');
+    $("."+idElemento+"").removeClass('active');
+    $(this).removeClass('active')
+});
+
+</script>
+
+
